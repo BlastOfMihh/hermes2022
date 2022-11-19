@@ -4,56 +4,12 @@
 import cv2
 import mediapipe as mp
 import time
-from enum import Enum
+import Exercices.squat as squat
 
-import argparse
-
-# exercise enum
-class exercise_type(Enum):
-    SQUAT = 0
-    PUSHUP = 1
-
-    # check if the person is doin a squat correctly
-def squat_check(lankle, rankle, lknee, rknee, lhip, rhip):
-    # check if the knees are below the ankles
-    if lknee[1] > lankle[1] and rknee[1] > rankle[1]:
-        # check if the hips are below the knees
-        if lhip[1] > lknee[1] and rhip[1] > rknee[1]:
-            return True
-    return False
-
-    # check if the person is doin a push-up correctly 
-def pushup_check(lankle, rankle, lknee, rknee, lhip, rhip):
-    # check if the knees are below the ankles
-    if lknee[1] > lankle[1] and rknee[1] > rankle[1]:
-        # check if the hips are above the knees
-        if lhip[1] < lknee[1] and rhip[1] < rknee[1]:
-            return True
-    # (x,y,z) = lankle
-    # print(x,y,z)
-    return False
 
 def show_video(img):
     cv2.imshow("Image", img)
     cv2.waitKey(1)
-
-def check_squat1(parts):
-    lankle = parts[0]
-    rankle = parts[1]
-    lknee = parts[2]
-    rknee = parts[3]
-    lhip = parts[4]
-    rhip = parts[5]
-    lwrist= parts[6]
-    rwrist= parts[7]
-    lshoulder = parts[8]
-    rshoulder = parts[9]
-    lelbow = parts[10]
-    relbow = parts[11]
-    if lelbow[1]<lshoulder[1] and relbow[1]<rshoulder[1]:
-        return True
-    return False 
-
 
 
 def video_capture():
@@ -65,6 +21,7 @@ def video_capture():
 
     pTime = 0
     while True:
+        cTime = time.time()
         success, img = cap.read()
         imgRGB = cv2.cvtColor(img, cv2.COLOR_BGR2RGB)
         results = pose.process(imgRGB)
@@ -83,9 +40,7 @@ def video_capture():
             lelbow    = [results.pose_landmarks.landmark[mpPose.PoseLandmark.LEFT_ELBOW].x, results.pose_landmarks.landmark[mpPose.PoseLandmark.LEFT_ELBOW].y, results.pose_landmarks.landmark[mpPose.PoseLandmark.LEFT_ELBOW].z]
             relbow    = [results.pose_landmarks.landmark[mpPose.PoseLandmark.RIGHT_ELBOW].x, results.pose_landmarks.landmark[mpPose.PoseLandmark.RIGHT_ELBOW].y, results.pose_landmarks.landmark[mpPose.PoseLandmark.RIGHT_ELBOW].z]
             parts = [lankle, rankle, lknee, rknee, lhip, rhip, lwrist, rwrist, lshoulder, rshoulder, lelbow, relbow]
-            cTime = time.time()
-            if check_squat1(parts):
-                print(cTime,"Squat")
+            squat.handle(parts)
             show_video(img)
 
 

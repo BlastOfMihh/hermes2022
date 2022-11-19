@@ -16,7 +16,7 @@ def main():
         if result==0:
             ++nr_of_pushups
         print(nr_of_pushups)
-        time.sleep(0.0001)
+        time.sleep(0.001)
 
     #video_capture()
 
