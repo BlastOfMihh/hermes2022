@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Login Page</title>
+    <style>
+    .fishes
+    {
+      position: relative;
+      top: 0;
+      left: 0;
+    }
+    .fish
+    {
+      position: absolute;
+      top: 60px;
+      left: 80px;
+    }
+    .login
+    {
+      position: absolute;
+      top: 600px;
+      left: 225px;
+    }
+    .login2
+    {
+      position: absolute;
+      top: 640px;
+      left: 225px;
+    }
+    .login3
+    {
+      position: absolute;
+      top: 670px;
+      left: 270px;
+    }
+    .login4
+    {
+      position: absolute;
+      top: 675px;
+      left: 235px;
+    }
+    .login5
+    {
+      position: absolute;
+      top: 740px;
+      left: 265px;
+    }
+
+    </style>
+</head>
+<body>
+
+<div style="position: relative; left: 0; top: 0;">
+    <!--    <img src="../loginPageBackgrounf.jpg" class="fishes"/>-->
+    <img src="{{url_for('static', filename='loginPageBackgrounf.jpg')}}">
+<!--    <img src="{{url_for('static', filename='Logo.png')}}">-->
+    <form action="/login" method="post" class="login">
+        <input type="text" name="username" placeholder="Username">
+
+    </form>
+    <form action="/login" method="post" class="login2">
+        <input type="password" name="password" placeholder="Password">
+    </form>
+    <form action="/login" method="post" class="login3">
+        <a href="http://127.0.0.1:5000/Nutrition">
+            <input type="button" value="Login">
+        </a>
+        <br>
+    </form>
+    <form action="/login" method="post" class="login4">
+
+        <h5>Dont have an account?</h5>
+    </form>
+    <form action="/login" method="post" class="login5">
+        <a href="http://127.0.0.1:5000/Nutrition">
+            <input type="button" value="Sign In">
+        </a>
+    </form>
+</div>
+
+</body>
+</html>
