@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Nutrition</title>
+    <style>
+      *{
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: 'Poppins', sans-serif;
+      }
+      body{
+        background: #e3edf7;
+        background-image: url("paper.gif");
+        height: 100vh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+      .skill{
+        width: 160px;
+        height: 160px;
+        position: relative;
+      }
+      .skill2{
+        width: 160px;
+        height: 160px;
+        position: relative;
+      }
+      .outer{
+        height: 160px;
+        width: 160px;
+        border-radius: 50%;
+        padding: 20px;
+        box-shadow: 6px 6px 10px -1px rgba(0,0,0,0.15),
+                    -6px -6px 10px -1px rgba(255,255,255,0.7);
+
+      }
+      .inner{
+        height: 120px;
+        width: 120px;
+        border-radius: 50%;
+        box-shadow: inset 4px 4px 6px -1px rgba(0,0,0,0.2),
+                    inset -4px -4px 6px -1px rgba(255,255,255,0.7),
+                    -0.5px -0.5px 0px rgba(255,255,255,1),
+                    0.5px 0.5px 0px  rgba(0,0,0,0.15),
+                    0px 12px 10px -10px rgba(0,0,0,0.05);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border: 1px solid blue;
+      }
+      .hhh{
+        text-align: right;
+        border: 3px solid green;
+        padding: 20px;
+      }
+
+.button-72 {
+      align-items: center;
+      background-color: initial;
+      background-image: linear-gradient(rgba(179, 132, 201, .84), rgba(57, 31, 91, .84) 50%);
+      border-radius: 42px;
+      border-width: 0;
+      box-shadow: rgba(57, 31, 91, 0.24) 0 2px 2px,rgba(179, 132, 201, 0.4) 0 8px 12px;
+      color: #FFFFFF;
+      cursor: pointer;
+      display: flex;
+      font-family: Quicksand,sans-serif;
+      font-size: 18px;
+      font-weight: 700;
+      justify-content: center;
+      letter-spacing: .04em;
+      line-height: 16px;
+      margin: 0;
+      padding: 18px 18px;
+      text-align: center;
+      text-decoration: none;
+      text-shadow: rgba(255, 255, 255, 0.4) 0 0 4px,rgba(255, 255, 255, 0.2) 0 0 12px,rgba(57, 31, 91, 0.6) 1px 1px 4px,rgba(57, 31, 91, 0.32) 4px 4px 16px;
+      user-select: none;
+      -webkit-user-select: none;
+      touch-action: manipulation;
+      vertical-align: baseline;
+    }
+
+      .button-72:hover {
+    background-image: linear-gradient(#F0C63C, #F0C63C 50%);
+}
+@media (min-width: 768px) {
+  .button-72 {
+    font-size: 20px;
+    padding: 18px 34px;
+  }
+}
+
+      #number{
+        font-weight: 600;
+        color: #555;
+      }
+       circle{
+        fill: none;
+        stroke: url(#GradientColor);
+        stroke-width: 20px;
+        stroke-dasharray: 472;
+        stroke-dashoffset: 472;/*aici pun cat de mult sa fie taiat;*/
+        animation: anim 2s linear forwards;
+        }
+
+       svg{
+       position: absolute;
+       top: 0;
+       left: 0;
+       }
+       @keyframes anim{
+         100%{
+            stroke-dashoffset: 165;
+         }
+
+
+
+
+
+
+    </style>
+</head>
+<body>
+<div style="position: absolute; top: 10; left: 0; padding: 10px; background-color: #e3edf7; ">
+    <h3>Protein </h3>
+    <div class="skill2">
+        <div class="outer">
+            <div class="inner">
+                <svg>
+                    <circle cx="80" cy="80" r="60"></circle>
+                    <defs>
+                        <linearGradient id="GradientColor">
+                            <stop offset="0%" stop-color="#2596be"></stop>
+                            <stop offset="100%" stop-color="#02ff00"></stop>
+                        </linearGradient>
+                    </defs>
+                </svg>
+                <div id="number">150g</div>
+            </div>
+        </div>
+    </div>
+</div>
+<div style="position: absolute; top: 0; left:0; padding: 10px; background-color: #e3edf7;">
+    <h3>Carbs </h3>
+    <div class="skill2">
+        <div class="outer">
+            <div class="inner">
+                <svg>
+                    <circle cx="80" cy="80" r="60"></circle>
+                    <defs>
+                        <linearGradient id="GradientColor">
+                            <stop offset="0%" stop-color="#ff0200"></stop>
+                            <stop offset="100%" stop-color="#02ff00"></stop>
+                        </linearGradient>
+                    </defs>
+                </svg>
+                <div id="number">130g</div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div style="position: absolute">
+    <h2>Calorie Budget:</h2>
+    <div class="skill">
+        <div class="outer">
+            <div class="inner">
+                <div id="number">2555 Calorii</div>
+
+            </div>
+
+        </div>
+        <div style="position: top; top: 10; right: 400;">
+            <br>
+            <a href="http://127.0.0.1:5000/WorkoutPlan">
+            <button class="button-72" role="button" onclick="http://127.0.0.1:5000/ShoulderPushups" >Workout Test</button>
+            </a>
+        </div>
+        <svg xmlns="http://www.w3.org/2000/svg" version="1.1" width="160px" height="160px">
+            <defs>
+                <linearGradient id="GradientColor">
+                    <stop offset="0%" stop-color="#e91e63"/>
+                    <stop offset="100%" stop-color="#673ab7"/>
+                </linearGradient>
+            </defs>
+            <circle cx="80" cy="80" r="70" stroke-linecap="round"/>
+        </svg>
+    </div>
+</div>
+
+
+<div style="position: absolute; bottom: 0; left: 0; padding: 10px; background-color: #e3edf7; ">
+    <h3>Fats </h3>
+    <div class="skill2">
+        <div class="outer">
+            <div class="inner">
+                <svg>
+                    <circle cx="80" cy="80" r="60"></circle>
+                    <defs>
+                        <linearGradient id="GradientColor">
+                            <stop offset="0%" stop-color="#ff0200"></stop>
+                            <stop offset="100%" stop-color="#02ff00"></stop>
+                        </linearGradient>
+                    </defs>
+                </svg>
+                <div id="number">54g</div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div>
+
+    <div style="position: absolute; bottom: 0; right: 0; padding: 10px; background-color: #e3edf7; ">
+        <h3>Liters consumed: 1l</h3>
+    </div>
+
+    <div style="position: absolute; bottom: 0; left: 10; padding: 10px; background-color: #e3edf7; ">
+        <h3>Calories burned: 150g </h3>
+        <h3>Steps: 2.8k</h3>
+    </div>
+
+
+    <script>
+    let number = document.getElementById("number");
+    let counter = 0;
+    setInterval(() => {
+           if(counter === 65){
+                clearInterval();
+        else{
+            counter +=1;
+            number.innerHTML = counter + "%";
+
+        }
+    },30);
+
+
+
+    </script>
+</div>
+</body>
+</html>
